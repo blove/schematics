@@ -1,0 +1,10 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "container-component": {
+      "description": "Generate a container component.",
+      "factory": "./container-component/index",
+      "schema": "./container-component/schema.json"
+    }
+  }
+}

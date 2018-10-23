@@ -1,0 +1,34 @@
+{
+  "name": "schematics",
+  "version": "0.0.0",
+  "description": "A blank schematics",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "git checkout HEAD -- sandbox && git clean -f -d sandbox",
+    "link:sandbox": "yarn link && cd sandbox && yarn link \"schematics\"",
+    "sandbox:add": "cd sandbox && ng g schematics:container-component --skip-import=true",
+    "test": "yarn clean && yarn sandbox:add && yarn test:sandbox",
+    "test:unit": "yarn build && jasmine src/**/*_spec.js",
+    "test:sandbox": "cd sandbox && yarn lint && yarn test --watch=false && yarn build"
+  },
+  "keywords": [
+    "schematics"
+  ],
+  "author": "",
+  "license": "MIT",
+  "schematics": "./src/collection.json",
+  "engines": {
+    "node": ">=8.11.0"
+  },
+  "dependencies": {
+    "@angular-devkit/core": "^7.0.2",
+    "@angular-devkit/schematics": "^7.0.2",
+    "@angular/cdk": "^7.0.1",
+    "@schematics/angular": "^7.0.2",
+    "@types/jasmine": "^2.6.0",
+    "@types/node": "^8.0.31",
+    "jasmine": "^2.8.0",
+    "tslint": "^5.11.0",
+    "typescript": "^2.5.2"
+  }
+}
