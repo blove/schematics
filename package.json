@@ -1,13 +1,13 @@
 {
   "name": "schematics",
   "version": "0.0.0",
-  "description": "A blank schematics",
+  "description": "A collection of Angular Schematics",
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "clean": "git checkout HEAD -- sandbox && git clean -f -d sandbox",
     "link:sandbox": "yarn link && cd sandbox && yarn link \"schematics\"",
-    "sandbox:add": "cd sandbox && ng g schematics:container-component --skip-import=true",
-    "test": "yarn clean && yarn sandbox:add && yarn test:sandbox",
+    "schematics:container-component": "cd sandbox && ng g schematics:container-component --skip-import",
+    "test": "yarn clean && yarn schematics:container-component && yarn test:sandbox",
     "test:unit": "yarn build && jasmine src/**/*_spec.js",
     "test:sandbox": "cd sandbox && yarn lint && yarn test --watch=false && yarn build"
   },

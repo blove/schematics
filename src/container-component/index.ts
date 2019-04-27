@@ -137,8 +137,6 @@ export default function(options: Schema): Rule {
 
     options.module = findModuleFromOptions(host, options);
 
-    options.module = findModuleFromOptions(host, options);
-
     const parsedPath = parseName(options.path, options.name);
     options.name = parsedPath.name;
     options.path = parsedPath.path;
@@ -158,6 +156,7 @@ export default function(options: Schema): Rule {
       }),
       move(parsedPath.path)
     ]);
+    // todo
 
     return chain([
       branchAndMerge(
